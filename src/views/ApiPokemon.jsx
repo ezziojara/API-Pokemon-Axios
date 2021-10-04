@@ -6,12 +6,19 @@ const ApiPokemon = () => {
 
     const[pokemones, setPokemones] = useState([]);
 
-    const buscarPokemones = () => {
+    const buscarPokemones = async () => {
         
         setPokemones([]);
+        try{
+            axios.get('https://pokeapi.co/api/v2/pokemon/?limit=807')
+            .then(response=>{setPokemones(response.data.results)})
+        }
+        catch(err){
 
-        axios.get('https://pokeapi.co/api/v2/pokemon/?limit=807')
-        .then(response=>{setPokemones(response.data.results)})
+        }
+        
+
+        
 
     }
 
