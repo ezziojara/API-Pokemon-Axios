@@ -14,7 +14,7 @@ const ApiPokemon = () => {
             .then(response=>{setPokemones(response.data.results)})
         }
         catch(err){
-
+            console.log(err);
         }
         
 
